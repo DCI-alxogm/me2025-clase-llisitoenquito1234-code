@@ -1,0 +1,29 @@
+//tarea primera derivada Luis Enrique Ramírez López
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    printf("calcula de la primera derivada\n");
+    
+    float derivada[3],fx, valor, h;
+     printf("********************************\n");
+      printf("Ingresa el valor central\n");
+    scanf("%f",&valor);
+     printf("Ingresa el valor de h\n");
+    scanf("%f",&h);
+    
+   if( h!= 0){
+       
+   
+    derivada[0]= (log(valor+h)-log(valor))/h;
+    derivada[1]= (log(valor)-log(valor-h))/h;
+    derivada[2]= (log(valor+h)-log(valor-h))/(2*h);
+     printf("Derivada mayor(derecha)= %f\n",derivada[0]);
+     printf("Derivada menor(izquierda)= %f\n",derivada[1]);
+      printf("derivada del central= %f\n",derivada[2]);
+   }
+   else 
+   printf("H debe ser distinto a 0\n");
+    return 0;
+}
