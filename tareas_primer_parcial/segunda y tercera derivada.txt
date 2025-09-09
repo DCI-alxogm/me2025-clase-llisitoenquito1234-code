@@ -1,0 +1,37 @@
+// Luis Enrique Ramírez López 
+// Segunda y tercera derivada
+
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    printf("calcula de la segunda derivada\n");
+    
+    float derivada2[3],derivada3[3],x, h;
+     printf("********************************\n");
+      printf("Ingresa el valor central\n");
+    scanf("%f",&x);
+     printf("Ingresa el valor de h\n");
+    scanf("%f",&h);
+    
+   if( h!= 0){
+       
+   
+    derivada2[0]=(log(x)-2*log(x+h)+log(x+(2*h)))/pow(h,2);
+    derivada2[1]= (log(x)-2*log(x-h)+log(x-(2*h)))/pow(h,2);
+    derivada2[2]=(log(x+h)-2*log(x)+log(x-h))/pow(h,2);
+     printf("Derivada2 mayor(derecha)= %f\n",derivada2[0]);
+     printf("Derivada2 menor(izquierda)= %f\n",derivada2[1]);
+      printf("derivada2 del central= %f\n",derivada2[2]);
+      printf("+++++++++++++++++++++++++++++++++++++++++\n");
+       derivada3[0]=log(x+(2*h))-(2*log(x-h))+(2*log(x+h))-log(x+(2*h))/(2*pow(h,3));
+
+  
+     printf("Derivada3 central= %f\n",derivada2[0]);
+  
+   }
+   else 
+   printf("H debe ser distinto a 0\n");
+    return 0;
+}
