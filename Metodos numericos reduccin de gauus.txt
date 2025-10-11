@@ -1,0 +1,31 @@
+//Luis Enrique Ramírez López
+//Metodos numericos
+#include <stdio.h>
+
+int main()
+{
+    
+float matriz[2][3]={{1,2,5}, {3,4,6}};
+float V,V2;
+int g =1;
+for(int x = 0; x<3;x++){
+    V=matriz[x][x];
+    V2=matriz[x][g];
+    for(int y=0;y<3;y++){
+       matriz[x+y][x]= (matriz[x+y][x])/V; 
+        for(g;g<2;g++){
+            matriz[x][g-1]=(matriz[x][g-1])*V2  -matriz[x][g];
+        }
+        
+    }
+}
+
+
+for(int i=0;i<2;i++){
+    for(int j = 0;j<3;j++){
+        printf("%f ",matriz[i][j]);
+    }
+   printf("\n "); 
+}
+    return 0;
+}
