@@ -1,0 +1,35 @@
+/******************************************************************************
+
+Luis Enrique Ramirez Lopez.
+
+*******************************************************************************/
+#include <stdio.h>
+
+int main()
+{
+    printf("Hello World");
+    int n=2;
+float m[2][3]={{2,3,-1},{3,4,0}};
+for(int i=0 ; i<n;i++){
+for(int y = i; y<n; y++){
+    float v= m[y][i];
+for(int x = i; x <n+1 ;x++){
+    if( y== i ){
+        m[y][x]=m[y][x]/v ;
+    }else if(y>i){
+        
+    
+    m[y][x] = m[y][x] - v * m[i][x];;}
+}
+}
+}
+printf("\nMatriz resultante:\n");
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n+1; j++){
+            printf("%.2f ", m[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
